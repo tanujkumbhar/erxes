@@ -2,6 +2,7 @@
   "name": "@erxes/ui-products",
   "version": "1.0.0",
   "dependencies": {
+    "@apollo/client": "^3.7.7",
     "graphql-tag": "2.6.1",
     "lodash.flowright": "^3.5.0",
     "query-string": "5.0.0",
