@@ -24,16 +24,18 @@ require("dotenv").config({ path: "./.env" });
 const deps = require("./package.json").dependencies;
 const depNames = Object.keys(deps);
 
+
 const shared = {};
 
 for (const name of depNames) {
   shared[name] = {
     singleton: true,
-    requiredVersion: deps[name] // ++++++++++++++ added this
+    requiredVersion: deps[name]
   };
 }
 
 module.exports = (env, args) => {
+
   return {
     output: {
       uniqueName: configs.name,
@@ -138,6 +140,9 @@ module.exports = (env, args) => {
     },
 
     plugins: [
+      new webpack.ProvidePlugin({
+        process: "process/browser",
+      }),
       new webpack.DefinePlugin({
         "process.env": JSON.stringify(process.env),
       }),
