@@ -5,7 +5,7 @@ import Spinner from '@erxes/ui/src/components/Spinner';
 import { IButtonMutateProps, IFormProps } from '@erxes/ui/src/types';
 import { getConstantFromStore } from '@erxes/ui/src/utils';
 import React from 'react';
-import { ChildProps, graphql } from 'react-apollo';
+import { ChildProps, graphql } from '@apollo/client/react/hoc';
 import SelectProperty from '../components/SelectProperty';
 import { mutations, queries } from '../graphql';
 import { IField } from '@erxes/ui/src/types';

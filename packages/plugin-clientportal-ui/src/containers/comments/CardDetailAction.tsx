@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from 'react-apollo';
+import { useMutation, useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import { confirm } from '@erxes/ui/src/utils';
 import React from 'react';

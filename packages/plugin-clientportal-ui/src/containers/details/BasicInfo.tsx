@@ -4,7 +4,7 @@ import { IRouterProps } from '@erxes/ui/src/types';
 import gql from 'graphql-tag';
 import * as compose from 'lodash.flowright';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom';
 
 import BasicInfoSection from '../../components/detail/BasicInfoSection';

@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import BrandFilter from '@erxes/ui/src/brands/components/BrandFilter';
 import { queries } from '@erxes/ui/src/brands/graphql';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withProps } from '@erxes/ui/src/utils';
 import { BrandsQueryResponse } from '@erxes/ui/src/brands/types';
 import { Counts } from '@erxes/ui/src/types';

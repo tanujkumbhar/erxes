@@ -1,6 +1,6 @@
 import * as compose from 'lodash.flowright';
 
-import { ChildProps, graphql } from 'react-apollo';
+import { ChildProps, graphql } from '@apollo/client/react/hoc';
 import { IButtonMutateProps, IFormProps } from '@erxes/ui/src/types';
 import { mutations, queries } from '../../channels/graphql';
 

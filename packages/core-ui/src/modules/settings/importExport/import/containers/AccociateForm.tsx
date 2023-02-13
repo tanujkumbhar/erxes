@@ -5,7 +5,7 @@ import Spinner from 'modules/common/components/Spinner';
 
 import { withProps, __ } from 'modules/common/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { IImportHistoryContentType } from '../../types';
 import AccociateForm from '../components/AccociateForm';
 import { queries } from '../graphql';

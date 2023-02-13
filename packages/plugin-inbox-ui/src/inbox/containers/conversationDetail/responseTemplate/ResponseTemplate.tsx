@@ -11,7 +11,7 @@ import {
   SaveResponseTemplateMutationResponse
 } from '../../../../settings/responseTemplates/types';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 
 type Props = {
   onSelect: (responseTemplate?: IResponseTemplate) => void;

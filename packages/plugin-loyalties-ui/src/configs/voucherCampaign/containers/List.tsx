@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import { Bulk } from '@erxes/ui/src/components';
 import { Alert, withProps } from '@erxes/ui/src/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import VoucherCampaign from '../components/List';
 import { mutations, queries } from '../graphql';
 import {

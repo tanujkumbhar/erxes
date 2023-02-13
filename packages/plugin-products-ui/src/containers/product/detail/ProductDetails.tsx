@@ -10,7 +10,7 @@ import {
   IProduct
 } from '../../../types';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import ProductDetails from '../../../components/product/detail/ProductDetails';
 import { queries } from '../../../graphql';
 

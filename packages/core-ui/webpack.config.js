@@ -10,14 +10,6 @@ const envs = require("dotenv").config({ path: "./.env" });
 
 const depNames = [
   "@apollo/client",
-  "apollo-cache-inmemory",
-  "apollo-client",
-  "apollo-link",
-  "apollo-link-context",
-  "apollo-link-error",
-  "apollo-link-http",
-  "apollo-link-ws",
-  "apollo-utilities",
   "color",
   "dotenv",
   "graphql",
@@ -25,7 +17,6 @@ const depNames = [
   "lodash",
   "lodash.flowright",
   "query-string",
-  "react-apollo",
   "react-bootstrap",
   "react-dom",
   "react-router-dom",
@@ -40,8 +31,8 @@ const shared = {};
 for (const name of depNames) {
   shared[name] = { 
     eager: true, 
-    requiredVersion: deps[name], 
-    singleton: true };
+    requiredVersion: deps[name], // +++++++ added this
+    singleton: true }; // ++++++++++ added this
 }
 
 module.exports = (env, args) => {

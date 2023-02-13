@@ -8,7 +8,7 @@ import {
 import gql from 'graphql-tag';
 import * as compose from 'lodash.flowright';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 
 import ClientPortalUserForm from '../components/forms/ClientPortalUserForm';
 import { mutations, queries } from '../graphql';

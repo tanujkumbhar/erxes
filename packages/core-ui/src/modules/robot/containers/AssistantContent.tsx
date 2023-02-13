@@ -4,7 +4,7 @@ import * as compose from 'lodash.flowright';
 import withCurrentUser from 'modules/auth/containers/withCurrentUser';
 import { IUser } from 'modules/auth/types';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withProps } from '../../common/utils';
 import AssistantContent from '../components/AssistantContent';
 import { ROLE_SETUP_DETAILS } from '../constants';

@@ -13,7 +13,7 @@ import { withProps } from '@erxes/ui/src/utils';
 import { getMonthTitle } from '@erxes/ui/src/utils/calendar';
 import CalendarColumn from '../components/CalendarColumn';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui-cards/src/deals/graphql';
 import {
   DealsQueryResponse,

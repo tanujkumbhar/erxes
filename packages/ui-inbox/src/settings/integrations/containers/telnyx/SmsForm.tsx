@@ -11,7 +11,7 @@ import { mutations, queries } from '../../graphql';
 import SmsForm from '../../components/telnyx/SmsForm';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries as integrationQueries } from '@erxes/ui-inbox/src/settings/integrations/graphql';
 
 type Props = {

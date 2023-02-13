@@ -4,7 +4,7 @@ import * as compose from 'lodash.flowright';
 import { queries } from '../graphql';
 import { __, Alert, confirm, withProps } from '@erxes/ui/src/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import Stage from '../components/stage/Stage';
 import { mutations } from '../graphql';
 import {

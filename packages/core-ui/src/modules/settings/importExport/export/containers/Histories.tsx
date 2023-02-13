@@ -4,7 +4,7 @@ import * as compose from 'lodash.flowright';
 import { router, withProps } from 'modules/common/utils';
 import { generatePaginationParams } from 'modules/common/utils/router';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom';
 import ExportHistories from '../components/Histories';
 import { queries } from '../graphql';

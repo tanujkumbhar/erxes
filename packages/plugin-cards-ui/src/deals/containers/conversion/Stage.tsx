@@ -12,7 +12,7 @@ import {
   IQueryParams
 } from '@erxes/ui-cards/src/deals/types';
 import * as React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 
 type Props = {
   stage: IConversionStage;

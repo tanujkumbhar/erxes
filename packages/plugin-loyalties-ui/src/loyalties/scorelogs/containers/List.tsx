@@ -4,7 +4,7 @@ import { withProps, router } from '@erxes/ui/src/utils/core';
 import gql from 'graphql-tag';
 import * as compose from 'lodash.flowright';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom';
 import ScoreLogsListComponent from '../components/List';
 import { queries } from '../graphql';

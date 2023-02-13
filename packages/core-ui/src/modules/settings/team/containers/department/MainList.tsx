@@ -1,7 +1,7 @@
 import React from 'react';
 import * as compose from 'lodash.flowright';
 import { withProps } from '@erxes/ui/src/utils/core';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import gql from 'graphql-tag';
 import { queries, mutations } from '@erxes/ui/src/team/graphql';
 import { DepartmentsMainQueryResponse } from '@erxes/ui/src/team/types';

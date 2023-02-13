@@ -6,7 +6,7 @@ import Info from '@erxes/ui/src/components/Info';
 import EditorCK from '@erxes/ui/src/containers/EditorCK';
 import { __ } from '@erxes/ui/src/utils';
 import React from 'react';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/client';
 import styled from 'styled-components';
 import { queries } from '../graphql';
 

@@ -3,7 +3,7 @@ import { IFormProps } from '@erxes/ui/src/types';
 import gql from 'graphql-tag';
 import * as compose from 'lodash.flowright';
 import React from 'react';
-import { ChildProps, graphql } from 'react-apollo';
+import { ChildProps, graphql } from '@apollo/client/react/hoc';
 import SelectDepartments from '../components/SelectDepartments';
 import { queries } from '../graphql';
 import { DepartmentsQueryResponse } from '../types';

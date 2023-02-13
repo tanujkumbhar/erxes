@@ -8,7 +8,7 @@ import { FieldsCombinedByTypeQueryResponse } from '../types';
 import ManageColumns from '../components/ManageColumns';
 import React from 'react';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { isEnabled } from '@erxes/ui/src/utils/core';
 import { queries } from '@erxes/ui-forms/src/forms/graphql';
 import queryString from 'query-string';

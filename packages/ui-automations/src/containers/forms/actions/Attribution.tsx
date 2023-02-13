@@ -9,7 +9,7 @@ import Form from '../../../components/forms/actions/placeHolder/Attribution';
 import React from 'react';
 import { queries as formQueries } from '@erxes/ui-forms/src/forms/graphql';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withProps } from '@erxes/ui/src/utils';
 
 type Props = {

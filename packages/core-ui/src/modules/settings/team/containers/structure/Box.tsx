@@ -1,6 +1,6 @@
 import React from 'react';
 import gql from 'graphql-tag';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/client';
 
 import { queries } from '@erxes/ui/src/team/graphql';
 import StructureBox from '../../components/structure/Box';

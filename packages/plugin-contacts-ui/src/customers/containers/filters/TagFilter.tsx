@@ -8,7 +8,7 @@ import React from 'react';
 import { TAG_TYPES } from '@erxes/ui-tags/src/constants';
 import { queries as customerQueries } from '@erxes/ui-contacts/src/customers/graphql';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries as tagQueries } from '@erxes/ui-tags/src/graphql';
 import { withProps } from '@erxes/ui/src/utils';
 

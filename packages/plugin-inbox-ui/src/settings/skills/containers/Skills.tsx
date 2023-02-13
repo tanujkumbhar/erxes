@@ -10,7 +10,8 @@ import {
   SkillsRemoveMutationResponse,
   SkillsTotalCountQueryResponse
 } from '../types';
-import { graphql, useMutation } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
+import { useMutation } from '@apollo/client';
 
 import { IUser } from '@erxes/ui/src/auth/types';
 import React from 'react';

@@ -13,7 +13,7 @@ import { IRouterProps } from '@erxes/ui/src/types';
 import { IntegrationsCountQueryResponse } from '@erxes/ui-inbox/src/settings/integrations/types';
 import React from 'react';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '../graphql';
 import queryString from 'query-string';
 import { withRouter } from 'react-router-dom';

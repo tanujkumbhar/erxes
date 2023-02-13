@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import * as compose from 'lodash.flowright';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom';
 
 import Spinner from '@erxes/ui/src/components/Spinner';

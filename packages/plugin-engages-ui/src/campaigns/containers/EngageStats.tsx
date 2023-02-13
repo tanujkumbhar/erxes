@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import EmptyState from '@erxes/ui/src/components/EmptyState';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withProps } from '@erxes/ui/src/utils';
 import EngageStats from '../components/EngageStats';
 import { queries } from '@erxes/ui-engage/src/graphql';

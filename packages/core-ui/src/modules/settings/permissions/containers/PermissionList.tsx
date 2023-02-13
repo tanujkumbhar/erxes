@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import { Alert, confirm } from 'modules/common/utils';
 import { generatePaginationParams } from 'modules/common/utils/router';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import PermissionList from '../components/PermissionList';
 import { mutations, queries } from '../graphql';
 import {
@@ -14,7 +14,10 @@ import {
   PermissionsQueryResponse,
   PermissionTotalCountQueryResponse
 } from '../types';
-import { IUserGroup, UsersGroupsQueryResponse } from '@erxes/ui-settings/src/permissions/types';
+import {
+  IUserGroup,
+  UsersGroupsQueryResponse
+} from '@erxes/ui-settings/src/permissions/types';
 
 type FinalProps = {
   can: (action: string) => boolean;

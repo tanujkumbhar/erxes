@@ -13,7 +13,7 @@ import React from 'react';
 import UserInvitationForm from '../components/UserInvitationForm';
 import { queries as channelQueries } from '@erxes/ui-settings/src/channels/graphql';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui/src/team/graphql';
 import { withProps } from '@erxes/ui/src/utils';
 

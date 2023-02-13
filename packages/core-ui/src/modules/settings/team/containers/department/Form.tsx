@@ -4,7 +4,7 @@ import { IButtonMutateProps } from '@erxes/ui/src/types';
 import Form from '../../components/department/Form';
 import { mutations, queries } from '@erxes/ui/src/team/graphql';
 import gql from 'graphql-tag';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/client';
 import { IDepartment } from '@erxes/ui/src/team/types';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import ErrorMsg from '@erxes/ui/src/components/ErrorMsg';

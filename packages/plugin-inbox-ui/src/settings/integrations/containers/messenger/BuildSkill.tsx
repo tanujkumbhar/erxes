@@ -5,7 +5,8 @@ import {
   SkillTypesQueryResponse,
   SkillsQueryResponse
 } from '@erxes/ui-inbox/src/settings/skills/types';
-import { graphql, useLazyQuery } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
+import { useLazyQuery } from '@apollo/client';
 
 import BuildSkill from '../../components/messenger/steps/BuildSkill';
 import { ISkillData } from '@erxes/ui-inbox/src/settings/integrations/types';

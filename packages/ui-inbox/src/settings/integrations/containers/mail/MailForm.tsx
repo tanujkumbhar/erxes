@@ -12,7 +12,7 @@ import debounce from 'lodash/debounce';
 import { queries as engageQueries } from '@erxes/ui-engage/src/graphql';
 import { mutations as engageMutations } from '@erxes/ui-engage/src/graphql';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries as messageQueries } from '@erxes/ui-inbox/src/inbox/graphql';
 import withCurrentUser from '@erxes/ui/src/auth/containers/withCurrentUser';
 import queryString from 'query-string';

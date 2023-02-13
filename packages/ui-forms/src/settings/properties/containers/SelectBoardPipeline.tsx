@@ -1,6 +1,6 @@
 import * as compose from 'lodash.flowright';
 
-import { ChildProps, graphql } from 'react-apollo';
+import { ChildProps, graphql } from '@apollo/client/react/hoc';
 
 import { BoardsQueryResponse } from '@erxes/ui-cards/src/boards/types';
 import ButtonMutate from '@erxes/ui/src/components/ButtonMutate';

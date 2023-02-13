@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import { Alert, confirm, withProps } from '@erxes/ui/src/utils';
 import { generatePaginationParams } from '@erxes/ui/src/utils/router';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import ArticleList from '../../components/article/ArticleList';
 import { mutations, queries } from '@erxes/ui-knowledgebase/src/graphql';
 import {

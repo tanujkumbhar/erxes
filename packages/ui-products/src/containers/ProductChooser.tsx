@@ -2,7 +2,7 @@ import queryString from 'query-string';
 import gql from 'graphql-tag';
 import * as compose from 'lodash.flowright';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 
 import Chooser from '@erxes/ui/src/components/Chooser';
 import { Alert, withProps } from '@erxes/ui/src/utils';

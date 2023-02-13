@@ -6,7 +6,7 @@ import { AllUsersQueryResponse } from '../auth/types';
 import EditorCK from '../components/EditorCK';
 import React from 'react';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { isEnabled } from '../utils/core';
 import { isValidURL } from '../utils/urlParser';
 import segmentQueries from './queries';

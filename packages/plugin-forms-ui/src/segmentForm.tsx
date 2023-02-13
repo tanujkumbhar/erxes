@@ -5,7 +5,7 @@ import Select from 'react-select-plus';
 import React from 'react';
 import { withProps } from '@erxes/ui/src/utils';
 import * as compose from 'lodash.flowright';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 
 import Spinner from '@erxes/ui/src/components/Spinner';
 import { FormsQueryResponse } from '@erxes/ui-forms/src/forms/types';

@@ -6,7 +6,7 @@ import { IUser } from '@erxes/ui/src/auth/types';
 import React from 'react';
 import SidebarActivity from '../../components/conversationDetail/sidebar/SidebarActivity';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui-log/src/activityLogs/graphql';
 import { withProps } from '@erxes/ui/src/utils';
 

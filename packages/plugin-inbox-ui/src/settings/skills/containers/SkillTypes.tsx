@@ -10,7 +10,7 @@ import { SkillTypesQueryResponse } from '@erxes/ui-inbox/src/settings/skills/typ
 import { commonListComposer } from '@erxes/ui/src/utils';
 import { generatePaginationParams } from '@erxes/ui/src/utils/router';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import mutations from '../graphql/mutations';
 import queries from '../graphql/queries';
 

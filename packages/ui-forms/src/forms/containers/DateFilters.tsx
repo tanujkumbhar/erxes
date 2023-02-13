@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 import React from 'react';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/client';
 
 import DateFilters from '../components/DateFilters';
 import { queries } from '../graphql';

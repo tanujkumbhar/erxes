@@ -15,7 +15,7 @@ import List from '../components/List';
 import React from 'react';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { router } from '@erxes/ui/src/utils';
 import EmptyState from '@erxes/ui/src/components/EmptyState';
 

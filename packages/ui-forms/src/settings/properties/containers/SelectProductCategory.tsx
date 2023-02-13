@@ -2,7 +2,7 @@ import Spinner from '@erxes/ui/src/components/Spinner';
 import gql from 'graphql-tag';
 import * as compose from 'lodash.flowright';
 import React from 'react';
-import { ChildProps, graphql } from 'react-apollo';
+import { ChildProps, graphql } from '@apollo/client/react/hoc';
 
 import SelectCategories from '../components/SelectProductCategory';
 import { queries } from '../graphql';

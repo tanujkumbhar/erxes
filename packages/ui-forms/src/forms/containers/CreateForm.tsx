@@ -15,7 +15,7 @@ import Form from '../components/Form';
 import React from 'react';
 import { Spinner } from '@erxes/ui/src/components';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { mutations } from '../graphql';
 import { queries } from '@erxes/ui-settings/src/general/graphql';
 import { withRouter } from 'react-router-dom';

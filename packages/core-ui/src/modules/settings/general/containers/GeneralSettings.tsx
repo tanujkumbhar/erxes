@@ -4,7 +4,7 @@ import * as compose from 'lodash.flowright';
 import Spinner from 'modules/common/components/Spinner';
 import { Alert, withProps } from 'modules/common/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import GeneralSettings from '../components/GeneralSettings';
 import { mutations, queries } from '@erxes/ui-settings/src/general/graphql';
 import {

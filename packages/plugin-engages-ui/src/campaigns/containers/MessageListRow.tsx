@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import { IRouterProps, MutationVariables } from '@erxes/ui/src/types';
 import { Alert, confirm, withProps } from '@erxes/ui/src/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom';
 import MessageListRow from '../components/MessageListRow';
 import { mutations, queries } from '@erxes/ui-engage/src/graphql';

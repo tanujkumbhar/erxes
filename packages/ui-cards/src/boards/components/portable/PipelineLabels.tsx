@@ -3,7 +3,7 @@ import { IField, IOption } from '@erxes/ui/src/types';
 import gql from 'graphql-tag';
 import React, { useState } from 'react';
 import Select from 'react-select-plus';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/client';
 import { queries } from '../../graphql';
 
 type Props = {

@@ -4,7 +4,7 @@ import { IButtonMutateProps } from '@erxes/ui/src/types';
 import { IRouterProps } from '@erxes/ui/src/types';
 import { Alert, confirm, withProps } from 'modules/common/utils';
 import React from 'react';
-import { ChildProps, graphql } from 'react-apollo';
+import { ChildProps, graphql } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import { mutations, queries } from '../graphql';

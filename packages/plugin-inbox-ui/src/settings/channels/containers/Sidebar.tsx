@@ -16,7 +16,7 @@ import React from 'react';
 import { RemovePipelineLabelMutationResponse } from '@erxes/ui-cards/src/boards/types';
 import Sidebar from '../components/Sidebar';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import inboxQueries from '@erxes/ui-inbox/src/inbox/graphql/queries';
 import { withRouter } from 'react-router-dom';
 

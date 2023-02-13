@@ -18,7 +18,7 @@ import List from '../components/List';
 import React from 'react';
 import { generatePaginationParams } from '@erxes/ui/src/utils/router';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { mutations as integrationMutations } from '@erxes/ui-inbox/src/settings/integrations/graphql/index';
 
 type Props = {

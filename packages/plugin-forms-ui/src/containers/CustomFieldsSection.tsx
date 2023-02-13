@@ -9,7 +9,7 @@ import Sidebar from '@erxes/ui/src/layout/components/Sidebar';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import asyncComponent from '@erxes/ui/src/components/AsyncComponent';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withProps } from '@erxes/ui/src/utils';
 
 const GenerateCustomFields = asyncComponent(() =>

@@ -7,7 +7,7 @@ import {
   IWebsiteMessengerApp,
   IntegrationsQueryResponse
 } from '@erxes/ui-inbox/src/settings/integrations/types';
-import { graphql, withApollo } from 'react-apollo';
+import { graphql, withApollo } from '@apollo/client/react/hoc';
 
 import AddOns from '../../components/messenger/steps/AddOns';
 import { IRouterProps } from '@erxes/ui/src/types';

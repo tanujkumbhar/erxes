@@ -4,7 +4,7 @@ import { Alert, getEnv, withProps } from '@erxes/ui/src/utils';
 import { generatePaginationParams } from '@erxes/ui/src/utils/router';
 import queryString from 'query-string';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom';
 import Bulk from '@erxes/ui/src/components/Bulk';
 import { IRouterProps } from '@erxes/ui/src/types';

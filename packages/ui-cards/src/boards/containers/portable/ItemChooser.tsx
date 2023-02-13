@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import { withProps } from '@erxes/ui/src/utils';
 import ConformityChooser from '../../../conformity/containers/ConformityChooser';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import {
   IFilterParams,
   IItem,

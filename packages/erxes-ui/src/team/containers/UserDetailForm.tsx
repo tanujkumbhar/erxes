@@ -5,7 +5,8 @@ import {
   UserConverationsQueryResponse,
   UserDetailQueryResponse
 } from '../types';
-import { graphql, useLazyQuery } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
+import { useLazyQuery } from '@apollo/client';
 import { mutations, queries } from '../graphql';
 
 import ButtonMutate from '@erxes/ui/src/components/ButtonMutate';

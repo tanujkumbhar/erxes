@@ -7,7 +7,7 @@ import ActivityLogs from '../components/ActivityLogs';
 import { IUser } from '@erxes/ui/src//auth/types';
 import React from 'react';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withCurrentUser } from '@erxes/ui/src/auth';
 import { withProps } from '@erxes/ui/src/utils';
 

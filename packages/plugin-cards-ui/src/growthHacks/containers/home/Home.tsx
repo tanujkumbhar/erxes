@@ -7,7 +7,7 @@ import { withProps } from '@erxes/ui/src/utils';
 import { queries as ghQueries } from '../../graphql';
 import { StateCountsQueryResponse } from '../../types';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import Home from '../../components/home/Home';
 
 type Props = {

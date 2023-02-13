@@ -6,7 +6,7 @@ import { IUser } from 'modules/auth/types';
 import { Alert, getCookie, setCookie, withProps } from 'modules/common/utils';
 import { queries as generalQueries } from '@erxes/ui-settings/src/general/graphql';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import QuickNavigation from '../components/QuickNavigation';
 
 type Props = {

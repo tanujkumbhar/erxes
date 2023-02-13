@@ -5,7 +5,7 @@ import ConfigsForm from '../components/ConfigsForm';
 import React from 'react';
 import Spinner from 'modules/common/components/Spinner';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries as commonQueries } from '../../common/graphql';
 import { withProps } from 'modules/common/utils';
 

@@ -8,7 +8,7 @@ import {
   router as routerUtils
 } from '@erxes/ui/src/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { withRouter } from 'react-router-dom';
 import ArchivedItems from '../components/ArchivedItems';
 import { mutations, queries } from '../graphql';

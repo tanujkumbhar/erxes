@@ -9,7 +9,7 @@ import {
 import gql from 'graphql-tag';
 import compose from 'lodash.flowright';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 
 import Component from '../components/List';
 import mutations from '../graphql/mutations';

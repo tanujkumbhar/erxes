@@ -1,7 +1,7 @@
 import React from 'react';
 import * as compose from 'lodash.flowright';
 import { mutations, queries } from '../../graphql';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import gql from 'graphql-tag';
 import NoteForm from '../../components/forms/NoteForm';
 import { IFormProps, MutationVariables } from '@erxes/ui/src/types';

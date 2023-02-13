@@ -4,7 +4,7 @@ import { TagsQueryResponse } from '@erxes/ui-tags/src/types';
 import CountsByTag from '@erxes/ui/src/components/CountsByTag';
 import React from 'react';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '../../graphql';
 import { queries as tagQueries } from '@erxes/ui-tags/src/graphql';
 import { TAG_TYPES } from '@erxes/ui-tags/src/constants';

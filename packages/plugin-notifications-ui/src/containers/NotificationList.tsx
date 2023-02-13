@@ -13,7 +13,7 @@ import NotificationList from '../components/NotificationList';
 import React from 'react';
 import { generatePaginationParams } from '@erxes/ui/src/utils/router';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 
 type Props = {
   queryParams: IQueryParams;

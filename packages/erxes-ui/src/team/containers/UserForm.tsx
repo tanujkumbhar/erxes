@@ -8,7 +8,7 @@ import Spinner from '@erxes/ui/src/components/Spinner';
 import UserForm from '../components/UserForm';
 import { queries as generalQueries } from '@erxes/ui-settings/src/general/graphql';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { isEnabled } from '../../utils/core';
 import { queries } from '../graphql';
 import { queries as usersGroupsQueries } from '@erxes/ui-settings/src/permissions/graphql';

@@ -6,7 +6,7 @@ import ConversationList from '../../components/leftSidebar/ConversationList';
 import { queries, subscriptions } from '@erxes/ui-inbox/src/inbox/graphql';
 import { generateParams } from '@erxes/ui-inbox/src/inbox/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import {
   ConversationsQueryResponse,
   ConvesationsQueryVariables,

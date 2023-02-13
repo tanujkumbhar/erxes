@@ -5,7 +5,7 @@ import { SitesTotalCountQueryResponse } from '../types';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import Webbuilder from '../components/WebBuilder';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '../graphql';
 
 type Props = {

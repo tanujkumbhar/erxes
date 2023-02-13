@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import client from '@erxes/ui/src/apolloClient';
 import { withProps, Alert } from '@erxes/ui/src/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import ListGroupBy from '../components/stage/ListGroupBy';
 import { mutations } from '../graphql';
 import {

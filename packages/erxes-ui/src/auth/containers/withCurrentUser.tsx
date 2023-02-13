@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import Spinner from '../../components/Spinner';
 import { storeConstantToStore, withProps } from '../../utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import * as gq from '../graphql';
 import { CurrentUserQueryResponse } from '../types';
 

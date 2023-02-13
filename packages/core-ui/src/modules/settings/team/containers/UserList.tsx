@@ -8,7 +8,7 @@ import {
   ICommonListProps
 } from '@erxes/ui-settings/src/common/types';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { commonListComposer } from '@erxes/ui/src/utils';
 import UserList from '../components/UserList';
 import { mutations, queries } from '@erxes/ui/src/team/graphql';

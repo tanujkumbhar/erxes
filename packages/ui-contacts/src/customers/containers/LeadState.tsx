@@ -14,7 +14,7 @@ import LeadState from '../components/LeadState';
 import React from 'react';
 import { confirm } from '@erxes/ui/src/utils';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { mutations } from '@erxes/ui-contacts/src/customers/graphql';
 
 type Props = {

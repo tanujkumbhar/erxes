@@ -1,6 +1,6 @@
 import React from 'react';
 import gql from 'graphql-tag';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/client';
 import EmptyState from '@erxes/ui/src/components/EmptyState';
 import { queries } from '../../graphql';
 import Spinner from '@erxes/ui/src/components/Spinner';

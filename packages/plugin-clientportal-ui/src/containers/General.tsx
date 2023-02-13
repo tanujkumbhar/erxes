@@ -11,7 +11,7 @@ import boardQueries from '@erxes/ui-cards/src/settings/boards/graphql/queries';
 import client from '@erxes/ui/src/apolloClient';
 import compose from 'lodash.flowright';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import knowledgeBaseQueries from '@erxes/ui-knowledgebase/src/graphql/queries';
 import { isEnabled } from '@erxes/ui/src/utils/core';
 

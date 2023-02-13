@@ -1,5 +1,5 @@
 import React from 'react';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/client';
 import gql from 'graphql-tag';
 import { queries as generalQueries } from '@erxes/ui-settings/src/general/graphql';
 import Home from '../components/Home';

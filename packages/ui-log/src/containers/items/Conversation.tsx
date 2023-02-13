@@ -11,7 +11,7 @@ import { IActivityLog } from '@erxes/ui-log/src/activityLogs/types';
 import React from 'react';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui-inbox/src/inbox/graphql';
 import { withProps } from '@erxes/ui/src/utils';
 

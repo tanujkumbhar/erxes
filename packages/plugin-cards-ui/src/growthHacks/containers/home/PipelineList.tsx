@@ -7,7 +7,7 @@ import PipelineList from '../../components/home/PipelineList';
 import { PipelinesQueryResponse } from '@erxes/ui-cards/src/boards/types';
 import React from 'react';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import mutations from '@erxes/ui-cards/src/settings/boards/graphql/mutations';
 import { queries } from '@erxes/ui-cards/src/boards/graphql';
 import { withProps } from '@erxes/ui/src/utils';

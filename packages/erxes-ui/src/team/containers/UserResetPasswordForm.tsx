@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import { IUser } from '@erxes/ui/src/auth/types';
 import { Alert, withProps } from '@erxes/ui/src/utils';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import UserResetPasswordForm from '../components/UserResetPasswordForm';
 import { mutations } from '../graphql';
 import { ResetMemberPasswordResponse } from '../types';

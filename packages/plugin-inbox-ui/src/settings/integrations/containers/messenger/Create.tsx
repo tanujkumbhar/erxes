@@ -25,7 +25,7 @@ import { TopicsQueryResponse } from '@erxes/ui-knowledgebase/src/types';
 import { UsersQueryResponse } from '@erxes/ui/src/auth/types';
 import { queries as brandQueries } from '@erxes/ui/src/brands/graphql';
 import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import { integrationsListParams } from '@erxes/ui-inbox/src/settings/integrations/containers/utils';
 import { queries as kbQueries } from '@erxes/ui-knowledgebase/src/graphql';
 import { withRouter } from 'react-router-dom';

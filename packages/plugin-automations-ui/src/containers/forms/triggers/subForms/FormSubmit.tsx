@@ -1,6 +1,6 @@
 import React from 'react';
 import Form from '../../../../components/forms/triggers/subForms/FormSubmit';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 import gql from 'graphql-tag';
 import * as compose from 'lodash.flowright';
 import { LeadIntegrationsQueryResponse } from '@erxes/ui-leads/src/types';

@@ -10,7 +10,7 @@ import {
 } from '../../../../settings/responseTemplates/types';
 import { ResponseTemplatesTotalCountQueryResponse } from '@erxes/ui-inbox/src/inbox/types';
 import React from 'react';
-import { graphql } from 'react-apollo';
+import { graphql } from '@apollo/client/react/hoc';
 
 import { AppConsumer } from 'coreui/appContext';
 
