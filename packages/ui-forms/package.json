@@ -2,7 +2,7 @@
   "name": "@erxes/ui-forms",
   "version": "1.0.0",
   "dependencies": {
-    "graphql-tag": "2.6.1",
+    
     "lodash": "4.17.15",
     "lodash.flowright": "3.5.0",
     "query-string": "^5.0.0",

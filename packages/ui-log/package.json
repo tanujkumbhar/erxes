@@ -2,7 +2,7 @@
   "name": "@erxes/ui-log",
   "version": "1.0.0",
   "dependencies": {
-    "graphql-tag": "2.6.1",
+    
     "lodash.flowright": "^3.5.0",
     "react": "16.14.0",
     "react-select-plus": "1.0.0-rc.5",

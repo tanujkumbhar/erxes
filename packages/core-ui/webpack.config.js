@@ -13,7 +13,6 @@ const depNames = [
   "color",
   "dotenv",
   "graphql",
-  "graphql-tag",
   "lodash",
   "lodash.flowright",
   "query-string",

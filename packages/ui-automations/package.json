@@ -2,7 +2,7 @@
   "name": "@erxes/ui-automations",
   "version": "1.0.0",
   "dependencies": {
-    "graphql-tag": "2.6.1",
+    
     "lodash.flowright": "3.5.0",
     "react": "16.14.0",
     "styled-components": "^3.2.6",

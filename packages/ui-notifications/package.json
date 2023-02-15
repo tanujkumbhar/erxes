@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "dayjs": "1.8.15",
-    "graphql-tag": "2.10.0",
+    
     "lodash": "4.17.15",
     "lodash.flowright": "3.5.0",
     "query-string": "5.0.0",
