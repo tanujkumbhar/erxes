@@ -14,7 +14,7 @@ import { IUser } from '@erxes/ui/src/auth/types';
 import React from 'react';
 import client from '@erxes/ui/src/apolloClient';
 import { getConfig } from '@erxes/ui-inbox/src/inbox/utils';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui-inbox/src/inbox/graphql';
 import withCurrentUser from '@erxes/ui/src/auth/containers/withCurrentUser';

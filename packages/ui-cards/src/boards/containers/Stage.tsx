@@ -1,5 +1,5 @@
 import client from '@erxes/ui/src/apolloClient';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { queries } from '../graphql';
 import { __, Alert, confirm, withProps } from '@erxes/ui/src/utils';

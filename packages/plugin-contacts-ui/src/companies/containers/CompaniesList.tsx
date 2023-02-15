@@ -4,7 +4,7 @@ import { IRouterProps } from '@erxes/ui/src/types';
 import { Alert, getEnv, withProps } from '@erxes/ui/src/utils';
 import { isEnabled } from '@erxes/ui/src/utils/core';
 import { generatePaginationParams } from '@erxes/ui/src/utils/router';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import queryString from 'query-string';
 import React from 'react';

@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { IItemParams } from '../../boards/types';
 import ButtonMutate from '@erxes/ui/src/components/ButtonMutate';

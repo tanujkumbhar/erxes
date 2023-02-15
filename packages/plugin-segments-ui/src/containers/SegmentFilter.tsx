@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import { CountQueryResponse } from '@erxes/ui/src/team/types';
 import React from 'react';
 import asyncComponent from '@erxes/ui/src/components/AsyncComponent';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui/src/team/graphql';
 import { withProps } from '@erxes/ui/src/utils';

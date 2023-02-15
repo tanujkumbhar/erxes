@@ -11,7 +11,7 @@ import {
 } from '../types';
 import { PipelineConsumer, PipelineProvider } from './PipelineContext';
 
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import EmptyState from '@erxes/ui/src/components/EmptyState';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import { IRouterProps } from '@erxes/ui/src/types';

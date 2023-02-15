@@ -9,7 +9,7 @@ import { getEnv, withProps } from '@erxes/ui/src/utils';
 import Home from '../components/store/Home';
 import React from 'react';
 import Spinner from '@erxes/ui/src/components/Spinner';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui-inbox/src/settings/integrations/graphql';
 

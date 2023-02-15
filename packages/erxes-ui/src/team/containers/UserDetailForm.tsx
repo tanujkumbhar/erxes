@@ -17,7 +17,7 @@ import Spinner from '@erxes/ui/src/components/Spinner';
 import UserDetailForm from '../components/detail/UserDetailForm';
 import UserForm from './UserForm';
 import UserSkillForm from '../components/detail/UserSkillForm';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { isEnabled } from '@erxes/ui/src/utils/core';
 
 type Props = {

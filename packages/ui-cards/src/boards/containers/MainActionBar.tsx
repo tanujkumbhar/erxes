@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { PageHeader } from '../styles/header';
 import { getDefaultBoardAndPipelines } from '../utils';

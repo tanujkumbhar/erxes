@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { graphql } from '@apollo/client/react/hoc';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 
 import { IUser } from '@erxes/ui/src/auth/types';

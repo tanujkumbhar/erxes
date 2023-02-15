@@ -8,7 +8,7 @@ import { LotteryCampaignDetailQueryResponse } from '../../../configs/lotteryCamp
 import React from 'react';
 import { RemoveMutationResponse } from '../types';
 import VoucherAward from '../components/Award';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '../../../configs/lotteryCampaign/graphql';
 import { withRouter } from 'react-router-dom';

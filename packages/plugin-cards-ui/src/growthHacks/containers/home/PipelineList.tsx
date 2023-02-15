@@ -6,7 +6,7 @@ import ButtonMutate from '@erxes/ui/src/components/ButtonMutate';
 import PipelineList from '../../components/home/PipelineList';
 import { PipelinesQueryResponse } from '@erxes/ui-cards/src/boards/types';
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import mutations from '@erxes/ui-cards/src/settings/boards/graphql/mutations';
 import { queries } from '@erxes/ui-cards/src/boards/graphql';

@@ -7,7 +7,7 @@ import { IButtonMutateProps } from '@erxes/ui/src/types';
 import React from 'react';
 import TagStep from '../components/step/TagStep';
 import { TagsQueryResponse } from '@erxes/ui-tags/src/types';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui-engage/src/graphql';
 import { sumCounts } from '@erxes/ui-engage/src/utils';

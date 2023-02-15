@@ -1,6 +1,6 @@
 import { AppConsumer } from 'coreui/appContext';
 import * as compose from 'lodash.flowright';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { can, router as routerUtils } from '@erxes/ui/src/utils';
 import React from 'react';
 import { graphql } from '@apollo/client/react/hoc';

@@ -5,7 +5,7 @@ import { IEditorProps, IMentionUser } from '../types';
 import { AllUsersQueryResponse } from '../auth/types';
 import EditorCK from '../components/EditorCK';
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { isEnabled } from '../utils/core';
 import { isValidURL } from '../utils/urlParser';

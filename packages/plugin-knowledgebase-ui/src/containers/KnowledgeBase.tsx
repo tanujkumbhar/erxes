@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { IRouterProps } from '@erxes/ui/src/types';
 import { router as routerUtils, withProps } from '@erxes/ui/src/utils';

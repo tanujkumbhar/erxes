@@ -12,7 +12,7 @@ import { IChannel } from '@erxes/ui-inbox/src/settings/channels/types';
 import { IRouterProps } from '@erxes/ui/src/types';
 import { IntegrationsCountQueryResponse } from '@erxes/ui-inbox/src/settings/integrations/types';
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '../graphql';
 import queryString from 'query-string';

@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { queries } from '@erxes/ui-cards/src/boards/graphql';
 import { BoardCountsQueryResponse } from '@erxes/ui-cards/src/boards/types';

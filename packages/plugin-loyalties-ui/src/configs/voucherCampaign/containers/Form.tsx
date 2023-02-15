@@ -1,6 +1,6 @@
 import * as compose from 'lodash.flowright';
 import From from '../components/Form';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import React from 'react';
 import { ButtonMutate } from '@erxes/ui/src/components';
 import { graphql } from '@apollo/client/react/hoc';

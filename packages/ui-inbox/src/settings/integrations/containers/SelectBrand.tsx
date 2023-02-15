@@ -10,7 +10,7 @@ import SelectBrand from '../components/SelectBrand';
 import Spinner from '@erxes/ui/src/components/Spinner';
 import { mutations as brandMutations } from '@erxes/ui/src/brands/graphql';
 import { queries as brandQueries } from '@erxes/ui/src/brands/graphql';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 type Props = {
   onChange: () => void;

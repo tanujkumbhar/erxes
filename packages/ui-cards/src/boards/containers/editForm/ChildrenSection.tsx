@@ -1,6 +1,6 @@
 import React from 'react';
 import * as compose from 'lodash.flowright';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries as dealQueries } from '../../../deals/graphql';
 import { queries as taskQueries } from '../../../tasks/graphql';

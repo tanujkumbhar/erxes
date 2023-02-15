@@ -7,7 +7,7 @@ import { IUser } from '@erxes/ui/src/auth/types';
 import React from 'react';
 import { UnreadConversationsTotalCountQueryResponse } from '@erxes/ui-inbox/src/inbox/types';
 import UnreadCount from '../components/UnreadCount';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import strip from 'strip';
 import withCurrentUser from '@erxes/ui/src/auth/containers/withCurrentUser';

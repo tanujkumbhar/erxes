@@ -1,5 +1,5 @@
 import { Info } from '@erxes/ui/src/styles/main';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import Spinner from 'modules/common/components/Spinner';
 

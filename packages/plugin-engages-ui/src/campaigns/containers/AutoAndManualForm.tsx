@@ -15,7 +15,7 @@ import { IConfig } from '@erxes/ui-settings/src/general/types';
 import { IUser } from '@erxes/ui/src/auth/types';
 import { IntegrationsQueryResponse } from '@erxes/ui-inbox/src/settings/integrations/types';
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries as integrationQueries } from '@erxes/ui-inbox/src/settings/integrations/graphql';
 import { isEnabled } from '@erxes/ui/src/utils/core';

@@ -1,5 +1,5 @@
 import { AppConsumer } from '@erxes/ui/src/appContext';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import * as queries from '@erxes/ui/src/auth/graphql';
 import { IUser } from '@erxes/ui/src/auth/types';

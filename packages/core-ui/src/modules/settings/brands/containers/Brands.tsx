@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { router as routerUtils, withProps } from 'modules/common/utils';
 import queryString from 'query-string';

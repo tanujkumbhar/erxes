@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { queries as boardQueries } from '../../graphql';
 import { IOptions, IPipeline, StagesQueryResponse } from '../../types';

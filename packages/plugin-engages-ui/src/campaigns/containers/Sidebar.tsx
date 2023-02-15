@@ -6,7 +6,7 @@ import { CountQueryResponse } from '@erxes/ui-engage/src/types';
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import { TagsQueryResponse } from '@erxes/ui-tags/src/types';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { isEnabled } from '@erxes/ui/src/utils/core';
 import { queries } from '@erxes/ui-engage/src/graphql';

@@ -1,6 +1,6 @@
 import * as compose from 'lodash.flowright';
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 
 import { ConversationDetailQueryResponse } from '@erxes/ui-inbox/src/inbox/types';

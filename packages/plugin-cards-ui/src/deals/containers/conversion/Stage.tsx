@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { IConversionStage } from '@erxes/ui-cards/src/boards/types';
 import EmptyState from '@erxes/ui/src/components/EmptyState';

@@ -1,6 +1,6 @@
 import { ControlLabel, FormGroup, Spinner } from '@erxes/ui/src/components';
 import { IField, IOption } from '@erxes/ui/src/types';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import React, { useState } from 'react';
 import Select from 'react-select-plus';
 import { useQuery } from '@apollo/client';

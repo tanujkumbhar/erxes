@@ -1,5 +1,5 @@
 import client from '@erxes/ui/src/apolloClient';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { ITrigger } from '../../types';
 import ButtonMutate from '@erxes/ui/src/components/ButtonMutate';

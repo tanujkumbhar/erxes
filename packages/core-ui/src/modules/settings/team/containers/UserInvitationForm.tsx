@@ -12,7 +12,7 @@ import { IUserGroup } from '@erxes/ui-settings/src/permissions/types';
 import React from 'react';
 import UserInvitationForm from '../components/UserInvitationForm';
 import { queries as channelQueries } from '@erxes/ui-settings/src/channels/graphql';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui/src/team/graphql';
 import { withProps } from '@erxes/ui/src/utils';

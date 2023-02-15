@@ -2,7 +2,7 @@ import * as compose from 'lodash.flowright';
 
 import React, { Component } from 'react';
 import { IOptions, IPipeline, StagesQueryResponse } from '../types';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import EmptyState from '@erxes/ui/src/components/EmptyState';
 import { withProps } from '@erxes/ui/src/utils';
 import { graphql } from '@apollo/client/react/hoc';

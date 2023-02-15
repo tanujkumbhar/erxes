@@ -1,5 +1,5 @@
 import { AppConsumer } from 'coreui/appContext';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import Bulk from '@erxes/ui/src/components/Bulk';
 import { IBulkContentProps } from '@erxes/ui/src/components/Bulk';

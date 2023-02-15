@@ -8,7 +8,7 @@ import FormGroup from '@erxes/ui/src/components/form/Group';
 import React from 'react';
 import Select from 'react-select-plus';
 import Spinner from '@erxes/ui/src/components/Spinner';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui-cards/src/settings/boards/graphql';
 import { withProps } from '@erxes/ui/src/utils';

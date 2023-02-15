@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import React from 'react';
 import { withApollo } from '@apollo/client/react/hoc';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';

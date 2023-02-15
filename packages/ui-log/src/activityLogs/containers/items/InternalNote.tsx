@@ -12,7 +12,7 @@ import { IUser } from '@erxes/ui/src/auth/types';
 import InternalNote from '../../components/items/InternalNote';
 import React from 'react';
 import Spinner from '@erxes/ui/src/components/Spinner';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 
 type Props = {

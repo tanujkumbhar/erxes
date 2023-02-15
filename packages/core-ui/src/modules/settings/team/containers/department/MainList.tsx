@@ -2,7 +2,7 @@ import React from 'react';
 import * as compose from 'lodash.flowright';
 import { withProps } from '@erxes/ui/src/utils/core';
 import { graphql } from '@apollo/client/react/hoc';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { queries, mutations } from '@erxes/ui/src/team/graphql';
 import { DepartmentsMainQueryResponse } from '@erxes/ui/src/team/types';
 import { EmptyState, Spinner } from '@erxes/ui/src';

@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { SaveMutation } from '@erxes/ui-cards/src/boards/types';
 import { Alert, withProps } from '@erxes/ui/src/utils';

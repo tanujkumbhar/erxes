@@ -7,7 +7,7 @@ import { COLUMN_CHOOSER_EXCLUDED_FIELD_NAMES } from '@erxes/ui-settings/src/cons
 import { FieldsCombinedByTypeQueryResponse } from '../types';
 import ManageColumns from '../components/ManageColumns';
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { isEnabled } from '@erxes/ui/src/utils/core';
 import { queries } from '@erxes/ui-forms/src/forms/graphql';

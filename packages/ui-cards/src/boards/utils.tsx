@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { STORAGE_BOARD_KEY, STORAGE_PIPELINE_KEY } from './constants';
 import { Amount } from './styles/stage';
 import { IDateColumn } from '@erxes/ui/src/types';

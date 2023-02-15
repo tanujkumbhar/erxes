@@ -1,5 +1,5 @@
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { useMutation } from '@apollo/client';
 
 import { Alert, confirm } from '@erxes/ui/src/utils';

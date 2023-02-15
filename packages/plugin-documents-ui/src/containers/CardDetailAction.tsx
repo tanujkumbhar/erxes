@@ -1,6 +1,6 @@
 import client from '@erxes/ui/src/apolloClient';
 import WithPermission from 'coreui/withPermission';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { colors } from '@erxes/ui/src/styles';
 import React from 'react';
 import styled from 'styled-components';

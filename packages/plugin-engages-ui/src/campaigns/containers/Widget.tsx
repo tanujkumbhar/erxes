@@ -20,7 +20,7 @@ import { IUser } from '@erxes/ui/src/auth/types';
 import React from 'react';
 import Widget from '../components/Widget';
 import { crudMutationsOptions } from '@erxes/ui-engage/src/utils';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import withCurrentUser from '@erxes/ui/src/auth/containers/withCurrentUser';
 

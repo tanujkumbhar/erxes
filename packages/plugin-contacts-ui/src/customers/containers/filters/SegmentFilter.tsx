@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import Segments from '@erxes/ui-segments/src/containers/Filter';
 import React from 'react';

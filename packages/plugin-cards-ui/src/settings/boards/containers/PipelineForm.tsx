@@ -12,7 +12,7 @@ import { IPipeline } from '@erxes/ui-cards/src/boards/types';
 import PipelineForm from '../components/PipelineForm';
 import React from 'react';
 import Spinner from '@erxes/ui/src/components/Spinner';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '@erxes/ui-cards/src/settings/boards/graphql';
 import { queries as teamQueries } from '@erxes/ui/src/team/graphql';

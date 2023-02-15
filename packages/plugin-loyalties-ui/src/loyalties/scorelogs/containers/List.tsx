@@ -1,7 +1,7 @@
 import { Bulk } from '@erxes/ui/src/components';
 import { IRouterProps } from '@erxes/ui/src/types';
 import { withProps, router } from '@erxes/ui/src/utils/core';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import React from 'react';
 import { graphql } from '@apollo/client/react/hoc';

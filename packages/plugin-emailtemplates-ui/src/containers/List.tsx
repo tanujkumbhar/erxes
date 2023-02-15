@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import client from '@erxes/ui/src/apolloClient';
 import { generatePaginationParams } from '@erxes/ui/src/utils/router';
 import { graphql } from '@apollo/client/react/hoc';

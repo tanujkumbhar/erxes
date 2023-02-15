@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { withProps } from '@erxes/ui/src/utils';
 import ResponseTemplate from '../../../components/conversationDetail/workarea/responseTemplate/ResponseTemplate';

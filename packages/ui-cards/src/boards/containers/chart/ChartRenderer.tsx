@@ -1,5 +1,5 @@
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/client';
 import EmptyState from '@erxes/ui/src/components/EmptyState';
 import { queries } from '../../graphql';

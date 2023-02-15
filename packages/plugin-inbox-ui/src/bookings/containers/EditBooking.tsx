@@ -16,7 +16,7 @@ import { IBookingData } from '@erxes/ui-inbox/src/settings/integrations/types';
 import { ILeadData } from '@erxes/ui-leads/src/types';
 import { IRouterProps } from '@erxes/ui/src/types';
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { isEnabled } from '@erxes/ui/src/utils/core';
 import { queries as settingsQueries } from '@erxes/ui-settings/src/general/graphql';

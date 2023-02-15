@@ -1,5 +1,5 @@
 import * as compose from 'lodash.flowright';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import ProductItem from '../../components/product/ProductItem';
 import React from 'react';
 import { graphql } from '@apollo/client/react/hoc';

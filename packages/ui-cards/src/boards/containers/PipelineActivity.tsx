@@ -7,7 +7,7 @@ import {
   IOptions,
   InternalNotesByActionQueryResponse
 } from '../types';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { withProps } from '@erxes/ui/src/utils';
 import { graphql } from '@apollo/client/react/hoc';
 import { generatePaginationParams } from '@erxes/ui/src/utils/router';

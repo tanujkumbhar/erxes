@@ -14,7 +14,7 @@ import { ConfigsQueryResponse } from '@erxes/ui-settings/src/general/types';
 import Form from '../components/Form';
 import React from 'react';
 import { Spinner } from '@erxes/ui/src/components';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { mutations } from '../graphql';
 import { queries } from '@erxes/ui-settings/src/general/graphql';

@@ -1,7 +1,7 @@
 import { queries as voucherCampaignQueries } from '../../configs/voucherCampaign/graphql';
 import { VoucherCampaignQueryResponse } from '../../configs/voucherCampaign/types';
 import { withProps } from '@erxes/ui/src/utils';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import React from 'react';
 import { graphql } from '@apollo/client/react/hoc';

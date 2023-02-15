@@ -9,7 +9,7 @@ import { mutations, queries } from '../../graphql';
 import List from '../../components/contentTypes/List';
 import React from 'react';
 import Spinner from '@erxes/ui/src/components/Spinner';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 
 type Props = {

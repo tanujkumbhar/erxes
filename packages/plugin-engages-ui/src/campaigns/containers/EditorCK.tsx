@@ -9,7 +9,7 @@ import EditorCK from '@erxes/ui/src/containers/EditorCK';
 import { IEditorProps } from '@erxes/ui/src/types';
 import React from 'react';
 import { queries as fieldQueries } from '@erxes/ui-forms/src/settings/properties/graphql';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { isEnabled } from '@erxes/ui/src/utils/core';
 import { queries } from '@erxes/ui-forms/src/forms/graphql';

@@ -10,7 +10,7 @@ import { useLazyQuery } from '@apollo/client';
 
 import BuildSkill from '../../components/messenger/steps/BuildSkill';
 import { ISkillData } from '@erxes/ui-inbox/src/settings/integrations/types';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import queries from '../../../skills/graphql/queries';
 import { withProps } from '@erxes/ui/src/utils';
 

@@ -1,5 +1,5 @@
 import { AppConsumer } from 'appContext';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { Alert, withProps } from 'modules/common/utils';
 import UserDetailForm from '@erxes/ui/src/team/containers/UserDetailForm';

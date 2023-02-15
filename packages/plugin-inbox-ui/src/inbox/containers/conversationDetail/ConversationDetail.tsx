@@ -1,5 +1,5 @@
 import { AppConsumer } from 'coreui/appContext';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { Alert, withProps } from '@erxes/ui/src/utils';
 import ConversationDetail from '../../components/conversationDetail/ConversationDetail';

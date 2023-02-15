@@ -3,7 +3,7 @@ import * as compose from 'lodash.flowright';
 import PluginDetails from '../components/detail/PluginDetails';
 import React from 'react';
 import Spinner from 'modules/common/components/Spinner';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { mutations } from '@erxes/ui-settings/src/general/graphql';
 import { queries } from '../graphql';

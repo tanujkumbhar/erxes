@@ -1,7 +1,7 @@
 import * as compose from 'lodash.flowright';
 import Form from '../components/Form';
 import React from 'react';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { mutations } from '../graphql';
 import { Alert, withProps } from 'modules/common/utils';

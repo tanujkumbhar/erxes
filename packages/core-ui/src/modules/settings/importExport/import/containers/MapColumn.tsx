@@ -5,7 +5,7 @@ import { IAttachment } from 'modules/common/types';
 import MapColumn from '../components/MapColumn';
 import React from 'react';
 import Spinner from 'modules/common/components/Spinner';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { graphql } from '@apollo/client/react/hoc';
 import { queries } from '../graphql';
 import { queries as commonQueries } from '../../common/graphql';

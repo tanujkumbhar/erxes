@@ -1,5 +1,5 @@
 import { AppConsumer } from 'coreui/appContext';
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import { fromJS } from 'immutable';
 import * as compose from 'lodash.flowright';
 import debounce from 'lodash/debounce';

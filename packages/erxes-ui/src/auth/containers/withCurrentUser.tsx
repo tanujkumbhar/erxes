@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import Spinner from '../../components/Spinner';
 import { storeConstantToStore, withProps } from '../../utils';

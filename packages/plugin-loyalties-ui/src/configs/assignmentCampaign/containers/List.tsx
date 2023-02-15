@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 import * as compose from 'lodash.flowright';
 import { Bulk, Spinner } from '@erxes/ui/src/components';
 import { Alert, withProps } from '@erxes/ui/src/utils';
