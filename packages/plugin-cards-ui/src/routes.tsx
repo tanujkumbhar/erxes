@@ -7,6 +7,8 @@ import GrowthHackingRoutes from './growthHacks/routes';
 import GrowthSettings from './settings/growthHacks/routes';
 import BoardSettings from './settings/boards/routes';
 
+console.log('trigger test build');
+
 const routes = () => {
   return (
     <React.Fragment>
