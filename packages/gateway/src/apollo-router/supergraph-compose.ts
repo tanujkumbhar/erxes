@@ -7,7 +7,6 @@ import * as fs from 'fs';
 import { execSync } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
-const execa = require('execa');
 
 const { NODE_ENV, SUPERGRAPH_POLL_INTERVAL_MS } = process.env;
 
@@ -54,40 +53,22 @@ const createSupergraphConfig = async (proxyTargets: ErxesProxyTarget[]) => {
 const supergraphComposeOnce = async () => {
   if (NODE_ENV === 'production') {
     // Don't rewrite supergraph schema if it exists. Delete and restart to update the supergraph.graphql
-    // if (fs.existsSync(supergraphPath)) {
-    //   return;
-    // }
+    if (fs.existsSync(supergraphPath)) {
+      return;
+    }
 
-    await execa(
-      'rover',
-      [
-        `supergraph`,
-        `compose`,
-        `--config`,
-        supergraphConfigPath,
-        `--output`,
-        supergraphPath,
-        `--elv2-license=accept`
-      ],
+    await execSync(
+      `rover supergraph compose --config ${supergraphConfigPath} --output ${supergraphPath} --elv2-license=accept`,
       {
         stdio: 'inherit'
       }
     );
+    process.exit(0);
   } else {
     const superGraphqlNext = supergraphPath + '.next';
-    execa(
-      `yarn`,
-      [
-        'rover',
-        'supergraph',
-        'compose',
-        '--config',
-        supergraphConfigPath,
-        '--output',
-        superGraphqlNext,
-        '--elv2-license=accept'
-      ],
-      { stdio: 'inherit', shell: true }
+    execSync(
+      `yarn rover supergraph compose --config ${supergraphConfigPath} --output ${superGraphqlNext} --elv2-license=accept`,
+      { stdio: 'inherit' }
     );
     if (
       !fs.existsSync(supergraphPath) ||
