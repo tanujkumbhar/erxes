@@ -4,7 +4,7 @@ dotenv.config();
 import { ErxesProxyTarget } from 'src/proxy/targets';
 import { supergraphConfigPath, supergraphPath } from './paths';
 import * as fs from 'fs';
-import { execSync } from 'child_process';
+import { execSync, execFileSync } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
 
@@ -53,17 +53,25 @@ const createSupergraphConfig = async (proxyTargets: ErxesProxyTarget[]) => {
 const supergraphComposeOnce = async () => {
   if (NODE_ENV === 'production') {
     // Don't rewrite supergraph schema if it exists. Delete and restart to update the supergraph.graphql
-    if (fs.existsSync(supergraphPath)) {
-      return;
-    }
+    // if (fs.existsSync(supergraphPath)) {
+    //   return;
+    // }
 
-    await execSync(
-      `rover supergraph compose --config ${supergraphConfigPath} --output ${supergraphPath} --elv2-license=accept`,
+    await execFileSync(
+      'rover',
+      [
+        'supergraph',
+        'compose',
+        '--config',
+        supergraphConfigPath,
+        '--output',
+        supergraphPath,
+        '--elv2-license=accept'
+      ],
       {
         stdio: 'inherit'
       }
     );
-    process.exit(0);
   } else {
     const superGraphqlNext = supergraphPath + '.next';
     execSync(
