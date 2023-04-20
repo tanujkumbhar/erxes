@@ -54,9 +54,7 @@ const supergraphComposeOnce = async () => {
   const superGraphqlNext = supergraphPath + '.next';
 
   const command =
-    process.env.NODE_ENV == 'development'
-      ? 'yarn rover'
-      : './dist/node_modules/@apollo/rover/run.js';
+    process.env.NODE_ENV == 'development' ? 'yarn rover' : 'rover';
 
   execSync(
     `${command} supergraph compose --config ${supergraphConfigPath} --output ${superGraphqlNext} --elv2-license=accept`,
