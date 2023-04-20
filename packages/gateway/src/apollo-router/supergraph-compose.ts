@@ -63,9 +63,19 @@ const supergraphComposeOnce = async () => {
     // if (fs.existsSync(supergraphPath)) {
     //   return;
     // }
-    const { stdout, stderr } = await exec(
+    const cp = exec(
       `rover supergraph compose --config ${supergraphConfigPath} --output ${supergraphPath} --elv2-license=accept`
     );
+
+    ['close', 'disconnect', 'error', 'exit', 'message', 'spawn'].forEach(
+      eventName => {
+        cp.child.on(eventName, code => {
+          console.log(`rover supergraph compose ${eventName} ${code}`);
+        });
+      }
+    );
+
+    const { stdout, stderr } = await cp;
 
     if (stdout) console.log(stdout);
     if (stderr) console.error(stderr);
