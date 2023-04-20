@@ -8,6 +8,10 @@ RUN yarn global add @apollo/rover@0.14.0
 WORKDIR /erxes-gateway
 RUN chown -R node:node /erxes-gateway
 COPY --chown=node:node . /erxes-gateway
+
+# force rover to download its supergraph plugin
+RUN cd /erxes-gateway/src/apollo-router/dummy && rover supergraph compose --config ./supergraph.yaml
+
 USER node
 
 RUN mkdir -p /erxes-gateway/dist/gateway/src/apollo-router/temp
