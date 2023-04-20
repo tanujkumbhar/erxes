@@ -4,7 +4,7 @@ dotenv.config();
 import { ErxesProxyTarget } from 'src/proxy/targets';
 import { supergraphConfigPath, supergraphPath } from './paths';
 import * as fs from 'fs';
-import { spawnSync, execSync, spawn } from 'child_process';
+import { spawnSync, execSync } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
 import { execa } from 'execa';
