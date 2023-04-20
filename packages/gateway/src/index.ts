@@ -27,7 +27,7 @@ import createErxesProxyMiddleware from './proxy/create-middleware';
 import apolloRouter from './apollo-router';
 // import { ChildProcess } from 'child_process';
 import { startSubscriptionServer } from './subscription';
-import { Disposable } from 'graphql-ws';
+// import { Disposable } from 'graphql-ws';
 import { clearCache } from '@erxes/api-utils/src/serviceDiscovery';
 
 const {
@@ -42,7 +42,7 @@ const {
 } = process.env;
 
 // let apolloRouterProcess: ChildProcess | undefined = undefined;
-let subscriptionServer: Disposable | undefined = undefined;
+// let subscriptionServer: Disposable | undefined = undefined;
 
 // const stopRouter = () => {
 //   if (!apolloRouterProcess) {
@@ -94,7 +94,7 @@ let subscriptionServer: Disposable | undefined = undefined;
     }
   });
 
-  subscriptionServer = await startSubscriptionServer(httpServer);
+  await startSubscriptionServer(httpServer);
 
   // Why are we parsing the body twice? When we don't use the body
   app.use(
