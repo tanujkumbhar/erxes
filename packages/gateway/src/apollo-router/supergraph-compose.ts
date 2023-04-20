@@ -70,7 +70,8 @@ const supergraphComposeOnce = async () => {
         '--log=debug'
       ],
       {
-        stdio: 'inherit'
+        stdio: 'inherit',
+        encoding: 'utf-8'
       }
     );
   } else {
