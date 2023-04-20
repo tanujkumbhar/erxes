@@ -31,7 +31,7 @@ import { Disposable } from 'graphql-ws';
 import { clearCache } from '@erxes/api-utils/src/serviceDiscovery';
 
 const {
-  NODE_ENV,
+  // NODE_ENV,
   DOMAIN,
   WIDGETS_DOMAIN,
   CLIENT_PORTAL_DOMAINS,
@@ -44,12 +44,12 @@ const {
 let apolloRouterProcess: ChildProcess | undefined = undefined;
 let subscriptionServer: Disposable | undefined = undefined;
 
-const stopRouter = () => {
-  if (!apolloRouterProcess) {
-    return;
-  }
-  apolloRouterProcess.kill('SIGTERM');
-};
+// const stopRouter = () => {
+//   if (!apolloRouterProcess) {
+//     return;
+//   }
+//   apolloRouterProcess.kill('SIGTERM');
+// };
 
 (async () => {
   await clearCache();
