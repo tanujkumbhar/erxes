@@ -7,6 +7,7 @@ import * as fs from 'fs';
 import { spawnSync, execSync, spawn } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
+import { execa } from 'execa';
 
 const { NODE_ENV, SUPERGRAPH_POLL_INTERVAL_MS } = process.env;
 
@@ -56,37 +57,22 @@ const supergraphComposeOnce = async () => {
     // if (fs.existsSync(supergraphPath)) {
     //   return;
     // }
-    await new Promise<void>((resolve, reject) => {
-      const rover = spawn(
-        `rover`,
-        [
-          `supergraph`,
-          `compose`,
-          `--config`,
-          supergraphConfigPath,
-          `--output`,
-          supergraphPath,
-          `--elv2-license=accept`
-        ],
-        { stdio: 'inherit', shell: true }
-      );
 
-      rover.on('error', reject);
-      rover.on('exit', code => {
-        if (code === 0) {
-          resolve();
-        } else {
-          reject(new Error(`rover exited with code ${code}`));
-        }
-      });
-      rover.on('close', code => {
-        if (code === 0) {
-          resolve();
-        } else {
-          reject(new Error(`rover exited with code ${code}`));
-        }
-      });
-    });
+    await execa(
+      'rover',
+      [
+        `supergraph`,
+        `compose`,
+        `--config`,
+        supergraphConfigPath,
+        `--output`,
+        supergraphPath,
+        `--elv2-license=accept`
+      ],
+      {
+        stdio: 'inherit'
+      }
+    );
   } else {
     const superGraphqlNext = supergraphPath + '.next';
     spawnSync(

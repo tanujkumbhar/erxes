@@ -9,7 +9,7 @@
     "build": "yarn tsc -p tsconfig.prod.json && node fix-build.js"
   },
   "dependencies": {
-    "@apollo/rover" : "^0.13.0",
+    "@apollo/rover": "^0.13.0",
     "@graphql-tools/schema": "^9.0.16",
     "cookie-parser": "^1.4.6",
     "dotenv": "^10.0.0",
@@ -17,6 +17,7 @@
     "erxes-api-utils": "^0.0.34",
     "erxes-telemetry": "^1.0.4",
     "esm": "^3.2.25",
+    "execa": "^7.1.1",
     "express": "^4.17.2",
     "federation-subscription-tools": "^0.1.0",
     "graphql": "^15.8.0",
