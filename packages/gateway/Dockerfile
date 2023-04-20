@@ -4,6 +4,7 @@ RUN apt-get update -y
 RUN apt-get install -y curl
 
 RUN curl -sSL https://rover.apollo.dev/nix/v0.14.0 | sh
+ENV PATH="$PATH:/root/.rover/bin"
 
 WORKDIR /erxes-gateway
 RUN chown -R node:node /erxes-gateway
