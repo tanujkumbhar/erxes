@@ -57,18 +57,22 @@ const supergraphComposeOnce = async () => {
     process.env.NODE_ENV == 'development' ? 'yarn rover' : 'rover';
 
   execSync(
-    `${command} supergraph compose --config ${supergraphConfigPath} --output ${superGraphqlNext} --elv2-license=accept`,
+    `${command} supergraph compose --config ${supergraphConfigPath} --output ${
+      NODE_ENV === 'development' ? superGraphqlNext : supergraphPath
+    } --elv2-license=accept`,
     {
       stdio: 'inherit'
     }
   );
 
-  if (
-    !fs.existsSync(supergraphPath) ||
-    !isSameFile(supergraphPath, superGraphqlNext)
-  ) {
-    execSync(`cp ${superGraphqlNext} ${supergraphPath}`);
-    console.log(`NEW Supergraph Schema was printed to ${supergraphPath}`);
+  if (NODE_ENV === 'development') {
+    if (
+      !fs.existsSync(supergraphPath) ||
+      !isSameFile(supergraphPath, superGraphqlNext)
+    ) {
+      execSync(`cp ${superGraphqlNext} ${supergraphPath}`);
+      console.log(`NEW Supergraph Schema was printed to ${supergraphPath}`);
+    }
   }
 };
 
