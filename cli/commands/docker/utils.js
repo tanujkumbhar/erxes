@@ -537,7 +537,7 @@ const up = async ({ uis, downloadLocales, fromInstaller }) => {
         },
         volumes: [
           './enabled-services.js:/data/enabled-services.js',
-          './apollo-router-config:/erxes-gateway/dist/gateway/src/apollo-router/temp' // so that subscription can read supergraph.graphql
+          './apollo-router-config:/erxes-gateway/dist/gateway/src/apollo-router/temp'
         ],
         healthcheck,
         extra_hosts,
