@@ -44,7 +44,7 @@ const createRouterConfig = () => {
       all: true
     },
     rhai: {
-      main: rhaiPath
+      main: NODE_ENV === 'production' ? '/dist/config/rhai/main.rhai' : rhaiPath
     },
     cors: {
       allow_credentials: true,
