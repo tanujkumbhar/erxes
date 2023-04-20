@@ -21,6 +21,8 @@ const {
 
 const { devOnly, devCmd, devStop } = require('../commands/dev');
 
+const routerConfig = require('../commands/router-config');
+
 /**
  * Normalize version argument
  *
@@ -124,5 +126,11 @@ program
   .command('upgrade')
   .description('Download the latest changes of erxes')
   .action(updateCmd);
+
+program
+  .command('router-config')
+  .option('--dev', 'Generate dev config')
+  .description('create router config')
+  .action(routerConfig.generate);
 
 program.parse(process.argv);

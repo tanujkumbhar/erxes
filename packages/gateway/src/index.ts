@@ -74,7 +74,9 @@ const stopRouter = () => {
   app.use(cors(corsOptions));
 
   const targets: ErxesProxyTarget[] = await retryGetProxyTargets();
-  await apolloRouter(targets);
+  if (NODE_ENV === 'development') {
+    await apolloRouter(targets);
+  }
 
   app.use(createErxesProxyMiddleware(targets));
 

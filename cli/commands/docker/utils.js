@@ -1144,6 +1144,7 @@ const deployMongoBi = async program => {
 module.exports.deployDbs = deployDbs;
 module.exports.dumpDb = dumpDb;
 module.exports.deployMongoBi = deployMongoBi;
+module.exports.generateLBaddress = generateLBaddress;
 
 module.exports.update = program => {
   if (process.argv.length < 4) {
