@@ -15,11 +15,12 @@ type RequestWithTargetExtra = Request & {
 export default function createErxesProxyMiddleware(
   targets: ErxesProxyTarget[]
 ): RequestHandler {
+  const routerHost = NODE_ENV === 'production' ? 'apollo-router' : 'localhost';
   const targetsWithRouter: ErxesProxyTarget[] = [
     ...targets,
     {
       name: 'graphql',
-      address: `http://localhost:${apolloRouterPort}`,
+      address: `http://${routerHost}:${apolloRouterPort}`,
       pathRegex: /^\/graphql/i,
       config: null
     }

@@ -119,7 +119,9 @@ const generatePluginBlock = (configs, plugin) => {
       PORT: plugin.port || SERVICE_INTERNAL_PORT || 80,
       API_MONGO_URL: api_mongo_url,
       MONGO_URL: mongo_url,
-      LOAD_BALANCER_ADDRESS: generateLBaddress(`http://plugin-${plugin.name}-api`),
+      LOAD_BALANCER_ADDRESS: generateLBaddress(
+        `http://plugin-${plugin.name}-api`
+      ),
       ...commonEnvs(configs),
       ...(plugin.extra_env || {})
     },
@@ -447,12 +449,31 @@ const up = async ({ uis, downloadLocales, fromInstaller }) => {
     await execCommand('mkdir core-api-uploads');
   }
 
+  const apolloRouterPort = configs.apollo_router_port || 50000;
+
   const dockerComposeConfig = {
     version: '3.7',
     networks: {
       erxes: generateNetworks(configs)
     },
     services: {
+      'apollo-router': {
+        image: 'ghcr.io/apollographql/router:v1.15.1',
+        restart: 'unless-stopped',
+        volumes: ['./apollo-router-config:/dist/config'],
+        command: [
+          '-c',
+          '/dist/config/router.yaml',
+          '-s',
+          '/dist/config/supergraph.graphql',
+          '--log',
+          'info',
+          '--hot-reload',
+          '--anonymous-telemetry-disabled'
+        ],
+        ports: [`${apolloRouterPort}:4000`],
+        networks: ['erxes']
+      },
       coreui: {
         image: `erxes/erxes:${(configs.coreui || {}).image_tag || image_tag}`,
         environment: {
@@ -476,7 +497,7 @@ const up = async ({ uis, downloadLocales, fromInstaller }) => {
         ],
         networks: ['erxes']
       },
-      "plugin-core-api": {
+      'plugin-core-api': {
         image: `erxes/core:${(configs.core || {}).image_tag || image_tag}`,
         environment: {
           SERVICE_NAME: 'core-api',
@@ -501,8 +522,10 @@ const up = async ({ uis, downloadLocales, fromInstaller }) => {
         networks: ['erxes']
       },
       gateway: {
-        image: `erxes/gateway:${(configs.gateway || {}).image_tag || image_tag}`,
+        image: `erxes/gateway:${(configs.gateway || {}).image_tag ||
+          image_tag}`,
         environment: {
+          APOLLO_ROUTER_PORT: apolloRouterPort,
           SERVICE_NAME: 'gateway',
           PORT: SERVICE_INTERNAL_PORT,
           LOAD_BALANCER_ADDRESS: generateLBaddress('http://gateway'),
@@ -512,7 +535,10 @@ const up = async ({ uis, downloadLocales, fromInstaller }) => {
           ...commonEnvs(configs),
           ...((configs.gateway || {}).extra_env || {})
         },
-        volumes: ['./enabled-services.js:/data/enabled-services.js'],
+        volumes: [
+          './enabled-services.js:/data/enabled-services.js',
+          './apollo-router-config:/erxes-gateway/dist/gateway/src/apollo-router/temp' // so that subscription can read supergraph.graphql
+        ],
         healthcheck,
         extra_hosts,
         ports: [`${GATEWAY_PORT}:${SERVICE_INTERNAL_PORT}`],
@@ -527,7 +553,7 @@ const up = async ({ uis, downloadLocales, fromInstaller }) => {
         volumes: ['./enabled-services.js:/data/enabled-services.js'],
         networks: ['erxes']
       },
-      "plugin-workers-api": {
+      'plugin-workers-api': {
         image: `erxes/workers:${image_tag}`,
         environment: {
           SERVICE_NAME: 'workers',
@@ -871,10 +897,14 @@ const update = async ({ serviceNames, noimage, uis }) => {
   await cleaning();
 
   const configs = await fse.readJSON(filePath('configs.json'));
-  
+
   for (const name of serviceNames.split(',')) {
     const pluginConfig = (configs.plugins || []).find(p => p.name === name);
-    const image_tag = (pluginConfig && pluginConfig.image_tag) || (configs[name] && configs[name].image_tag) || configs.image_tag || 'federation';
+    const image_tag =
+      (pluginConfig && pluginConfig.image_tag) ||
+      (configs[name] && configs[name].image_tag) ||
+      configs.image_tag ||
+      'federation';
 
     if (!noimage) {
       log(`Updating image ${name}......`);

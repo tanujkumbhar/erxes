@@ -1,14 +1,13 @@
 const fs = require('fs');
 const fse = require('fs-extra');
 const yaml = require('yaml');
-const { log, execCommand, filePath, execCurl } = require('../utils');
+const { filePath } = require('../utils');
 const { generateLBaddress } = require('../docker/utils');
 const { execSync } = require('child_process');
 const path = require('path');
 
-async function supergraphYaml(configs, isDev) {
-let port = 3300;
-const coreAddress = isDev ? `http://localhost:${port}` : generateLBaddress('http://plugin-core-api');
+async function supergraphYaml(configs) {
+  const coreAddress = generateLBaddress('http://plugin-core-api');
   const coreGraphqlEndpoint = `${coreAddress}/graphql`;
   const yamlObject = {
     federation_version: '=2.3.1',
@@ -21,9 +20,7 @@ const coreAddress = isDev ? `http://localhost:${port}` : generateLBaddress('http
   };
 
   for (const plugin of configs.plugins || []) {
-    port++;
-    
-    const pluginAddress = isDev ? `http://localhost:${port}` : generateLBaddress(`http://plugin-${plugin.name}-api`);
+    const pluginAddress = generateLBaddress(`http://plugin-${plugin.name}-api`);
     const pluginGraphqlEndpoint = `${pluginAddress}/graphql`;
     yamlObject.subgraphs[plugin.name] = {
       routing_url: pluginGraphqlEndpoint,
@@ -33,24 +30,24 @@ const coreAddress = isDev ? `http://localhost:${port}` : generateLBaddress('http
 
   const yamlString = yaml.stringify(yamlObject);
 
-  fs.writeFileSync(`${configs.router_config_dir}/supergraph.yaml`, yamlString);
+  fs.writeFileSync(
+    filePath(`./apollo-router-config/supergraph.yaml`),
+    yamlString
+  );
 }
 
-async function supergraphGraphql(configs) {
-    const supergraphYamlPath = `${configs.router_config_dir}/supergraph.yaml`;
-    const superGraphGraphqlPath = `${configs.router_config_dir}/supergraph.graphql`;
+async function supergraphGraphql() {
+  const supergraphYamlPath = filePath(`./apollo-router-config/supergraph.yaml`);
+  const superGraphGraphqlPath = filePath(
+    `./apollo-router-config/supergraph.graphql`
+  );
 
-    const command = `rover supergraph compose --config ${supergraphYamlPath} --output ${superGraphGraphqlPath} --elv2-license=accept`;
+  const command = `rover supergraph compose --config ${supergraphYamlPath} --output ${superGraphGraphqlPath} --elv2-license=accept`;
 
-    execSync(command);
+  execSync(command);
 }
 
-async function supergraph(configs, isDev) {
-  await supergraphYaml(configs, isDev);
-  await supergraphGraphql(configs, isDev);
-}
-
-async function config(configs) {
+async function routerYaml(configs) {
   const widgets = configs.widgets || {};
   const WIDGETS_DOMAIN = widgets.domain || `${configs.domain}/widgets`;
   const CLIENT_PORTAL_DOMAINS = configs.client_portal_domains || '';
@@ -62,7 +59,7 @@ async function config(configs) {
       all: true
     },
     rhai: {
-      main: "/dist/config/rhai/main.rhai"
+      main: '/dist/config/rhai/main.rhai'
     },
     cors: {
       allow_credentials: true,
@@ -90,22 +87,24 @@ async function config(configs) {
     }
   };
 
-  fs.writeFileSync(`${configs.router_config_dir}/router.yaml`, yaml.stringify(config));
+  fs.writeFileSync(
+    filePath(`./apollo-router-config/router.yaml`),
+    yaml.stringify(config)
+  );
 }
 
-async function rhai(configs) {
+async function rhai() {
   const rhaiDir = path.resolve(__dirname, 'rhai');
-  const targetDir = `${configs.router_config_dir}/rhai`;
+  const targetDir = filePath(`./apollo-router-config/rhai`);
   await fse.copydir(rhaiDir, targetDir);
 }
 
-async function generate(program) {
-  const isDev = program && program.dev;
+async function generate() {
   const configs = await fse.readJSON(filePath('configs.json'));
-
-  await supergraph(configs, isDev);
-  await config(configs, isDev);
-  await rhai(configs);
+  await supergraphYaml(configs, isDev);
+  await supergraphGraphql();
+  await routerYaml(configs);
+  await rhai();
 }
 
 module.exports = {
