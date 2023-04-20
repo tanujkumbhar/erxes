@@ -25,7 +25,7 @@ import * as cors from 'cors';
 import { retryGetProxyTargets, ErxesProxyTarget } from './proxy/targets';
 import createErxesProxyMiddleware from './proxy/create-middleware';
 import apolloRouter from './apollo-router';
-import { ChildProcess } from 'child_process';
+// import { ChildProcess } from 'child_process';
 import { startSubscriptionServer } from './subscription';
 import { Disposable } from 'graphql-ws';
 import { clearCache } from '@erxes/api-utils/src/serviceDiscovery';
@@ -41,7 +41,7 @@ const {
   MESSAGE_BROKER_PREFIX
 } = process.env;
 
-let apolloRouterProcess: ChildProcess | undefined = undefined;
+// let apolloRouterProcess: ChildProcess | undefined = undefined;
 let subscriptionServer: Disposable | undefined = undefined;
 
 // const stopRouter = () => {
@@ -75,7 +75,7 @@ let subscriptionServer: Disposable | undefined = undefined;
 
   const targets: ErxesProxyTarget[] = await retryGetProxyTargets();
 
-  apolloRouterProcess = await apolloRouter(targets);
+  await apolloRouter(targets);
 
   app.use(createErxesProxyMiddleware(targets));
 
