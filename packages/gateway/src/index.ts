@@ -118,17 +118,17 @@ const stopRouter = () => {
   console.log(`Erxes gateway ready at http://localhost:${port}/graphql`);
 })();
 
-(['SIGINT', 'SIGTERM'] as NodeJS.Signals[]).forEach(sig => {
-  process.on(sig, async () => {
-    if (NODE_ENV === 'development') {
-      clearCache();
-    }
-    if (subscriptionServer) {
-      try {
-        subscriptionServer.dispose();
-      } catch (e) {}
-    }
-    stopRouter();
-    process.exit(0);
-  });
-});
+// (['SIGINT', 'SIGTERM'] as NodeJS.Signals[]).forEach(sig => {
+//   process.on(sig, async () => {
+//     if (NODE_ENV === 'development') {
+//       clearCache();
+//     }
+//     if (subscriptionServer) {
+//       try {
+//         subscriptionServer.dispose();
+//       } catch (e) {}
+//     }
+//     stopRouter();
+//     process.exit(0);
+//   });
+// });
