@@ -4,7 +4,7 @@ dotenv.config();
 import { ErxesProxyTarget } from 'src/proxy/targets';
 import { supergraphConfigPath, supergraphPath } from './paths';
 import * as fs from 'fs';
-import { execSync, exec as execCb } from 'child_process';
+import { exec as execCb } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
 import { promisify } from 'util';
@@ -25,7 +25,7 @@ type SupergraphConfig = {
   };
 };
 
-const createSupergraphConfig = (proxyTargets: ErxesProxyTarget[]) => {
+const createSupergraphConfig = async (proxyTargets: ErxesProxyTarget[]) => {
   const superGraphConfigNext = supergraphConfigPath + '.next';
   const config: SupergraphConfig = {
     federation_version: '=2.3.1',
@@ -49,7 +49,11 @@ const createSupergraphConfig = (proxyTargets: ErxesProxyTarget[]) => {
     !fs.existsSync(supergraphConfigPath) ||
     !isSameFile(supergraphConfigPath, superGraphConfigNext)
   ) {
-    execSync(`cp ${superGraphConfigNext}  ${supergraphConfigPath}`);
+    const { stdout, stderr } = await exec(
+      `cp ${superGraphConfigNext}  ${supergraphConfigPath}`
+    );
+    if (stdout) console.log(stdout);
+    if (stderr) console.error(stderr);
   }
 };
 
@@ -67,19 +71,23 @@ const supergraphComposeOnce = async () => {
     if (stderr) console.error(stderr);
   } else {
     const superGraphqlNext = supergraphPath + '.next';
-    execSync(
+    const { stdout, stderr } = await exec(
       `yarn rover supergraph compose --config ${supergraphConfigPath} --output ${
         NODE_ENV === 'development' ? superGraphqlNext : supergraphPath
-      } --elv2-license=accept`,
-      {
-        stdio: 'inherit'
-      }
+      } --elv2-license=accept`
     );
+    if (stdout) console.log(stdout);
+    if (stderr) console.error(stderr);
     if (
       !fs.existsSync(supergraphPath) ||
       !isSameFile(supergraphPath, superGraphqlNext)
     ) {
-      execSync(`cp ${superGraphqlNext} ${supergraphPath}`);
+      const { stdout, stderr } = await exec(
+        `cp ${superGraphqlNext} ${supergraphPath}`
+      );
+      if (stdout) console.log(stdout);
+      if (stderr) console.error(stderr);
+
       console.log(`NEW Supergraph Schema was printed to ${supergraphPath}`);
     }
   }
