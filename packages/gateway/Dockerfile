@@ -1,4 +1,4 @@
-FROM node:16.20.0-bullseye-slim
+FROM node:14.21.3-bullseye-slim
 
 RUN apt-get update -y
 RUN apt-get install -y curl

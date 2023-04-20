@@ -51,21 +51,27 @@ const createSupergraphConfig = (proxyTargets: ErxesProxyTarget[]) => {
 };
 
 const supergraphComposeOnce = async () => {
-  const superGraphqlNext = supergraphPath + '.next';
-
-  const command =
-    process.env.NODE_ENV == 'development' ? 'yarn rover' : 'rover';
-
-  execSync(
-    `${command} supergraph compose --config ${supergraphConfigPath} --output ${
-      NODE_ENV === 'development' ? superGraphqlNext : supergraphPath
-    } --elv2-license=accept`,
-    {
-      stdio: 'inherit'
+  if (NODE_ENV === 'production') {
+    // Don't rewrite supergraph schema if it exists. Delete and restart to update the supergraph.graphql
+    if (fs.existsSync(supergraphPath)) {
+      return;
     }
-  );
-
-  if (NODE_ENV === 'development') {
+    execSync(
+      `rover supergraph compose --config ${supergraphConfigPath} --output ${supergraphPath} --elv2-license=accept`,
+      {
+        stdio: 'inherit'
+      }
+    );
+  } else {
+    const superGraphqlNext = supergraphPath + '.next';
+    execSync(
+      `yarn rover supergraph compose --config ${supergraphConfigPath} --output ${
+        NODE_ENV === 'development' ? superGraphqlNext : supergraphPath
+      } --elv2-license=accept`,
+      {
+        stdio: 'inherit'
+      }
+    );
     if (
       !fs.existsSync(supergraphPath) ||
       !isSameFile(supergraphPath, superGraphqlNext)
