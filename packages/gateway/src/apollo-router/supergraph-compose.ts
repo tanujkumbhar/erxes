@@ -4,12 +4,10 @@ dotenv.config();
 import { ErxesProxyTarget } from 'src/proxy/targets';
 import { supergraphConfigPath, supergraphPath } from './paths';
 import * as fs from 'fs';
-import { exec as execCb } from 'child_process';
+import { spawnSync, execSync } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
-import { promisify } from 'util';
-
-const exec = promisify(execCb);
+// import { promisify } from 'util';
 
 const { NODE_ENV, SUPERGRAPH_POLL_INTERVAL_MS } = process.env;
 
@@ -49,11 +47,7 @@ const createSupergraphConfig = async (proxyTargets: ErxesProxyTarget[]) => {
     !fs.existsSync(supergraphConfigPath) ||
     !isSameFile(supergraphConfigPath, superGraphConfigNext)
   ) {
-    const { stdout, stderr } = await exec(
-      `cp ${superGraphConfigNext}  ${supergraphConfigPath}`
-    );
-    if (stdout) console.log(stdout);
-    if (stderr) console.error(stderr);
+    execSync(`cp ${superGraphConfigNext}  ${supergraphConfigPath}`);
   }
 };
 
@@ -63,40 +57,42 @@ const supergraphComposeOnce = async () => {
     // if (fs.existsSync(supergraphPath)) {
     //   return;
     // }
-    const cp = exec(
-      `rover supergraph compose --config ${supergraphConfigPath} --output ${supergraphPath} --elv2-license=accept`
+    const { error } = spawnSync(
+      `rover`,
+      [
+        `supergraph`,
+        `compose`,
+        `--config`,
+        supergraphConfigPath,
+        `--output`,
+        supergraphPath,
+        `--elv2-license=accept`
+      ],
+      { stdio: 'inherit', shell: true }
     );
 
-    ['close', 'disconnect', 'error', 'exit', 'message', 'spawn'].forEach(
-      eventName => {
-        cp.child.on(eventName, code => {
-          console.log(`rover supergraph compose ${eventName} ${code}`);
-        });
-      }
-    );
-
-    const { stdout, stderr } = await cp;
-
-    if (stdout) console.log(stdout);
-    if (stderr) console.error(stderr);
+    console.log(error);
   } else {
     const superGraphqlNext = supergraphPath + '.next';
-    const { stdout, stderr } = await exec(
-      `yarn rover supergraph compose --config ${supergraphConfigPath} --output ${
-        NODE_ENV === 'development' ? superGraphqlNext : supergraphPath
-      } --elv2-license=accept`
+    spawnSync(
+      `yarn`,
+      [
+        'rover',
+        'supergraph',
+        'compose',
+        '--config',
+        supergraphConfigPath,
+        '--output',
+        superGraphqlNext,
+        '--elv2-license=accept'
+      ],
+      { stdio: 'inherit', shell: true }
     );
-    if (stdout) console.log(stdout);
-    if (stderr) console.error(stderr);
     if (
       !fs.existsSync(supergraphPath) ||
       !isSameFile(supergraphPath, superGraphqlNext)
     ) {
-      const { stdout, stderr } = await exec(
-        `cp ${superGraphqlNext} ${supergraphPath}`
-      );
-      if (stdout) console.log(stdout);
-      if (stderr) console.error(stderr);
+      execSync(`cp ${superGraphqlNext} ${supergraphPath}`);
 
       console.log(`NEW Supergraph Schema was printed to ${supergraphPath}`);
     }
