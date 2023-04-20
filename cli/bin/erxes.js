@@ -21,8 +21,6 @@ const {
 
 const { devOnly, devCmd, devStop } = require('../commands/dev');
 
-const routerConfig = require('../commands/router-config');
-
 /**
  * Normalize version argument
  *

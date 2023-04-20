@@ -7,7 +7,7 @@ import * as fs from 'fs';
 import { spawnSync, execSync } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
-import { execa } from 'execa';
+import execa from 'execa';
 
 const { NODE_ENV, SUPERGRAPH_POLL_INTERVAL_MS } = process.env;
 
