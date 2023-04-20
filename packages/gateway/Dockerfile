@@ -1,8 +1,7 @@
 FROM node:14.21.3-bullseye-slim
 
-# RUN apt-get update -y
-# RUN apt-get install -y curl
-# RUN apt-get install -y heaptrack
+RUN apt-get update -y
+RUN apt-get install -y curl
 
 WORKDIR /erxes-gateway
 RUN chown -R node:node /erxes-gateway
