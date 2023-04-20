@@ -4,10 +4,9 @@ dotenv.config();
 import { ErxesProxyTarget } from 'src/proxy/targets';
 import { supergraphConfigPath, supergraphPath } from './paths';
 import * as fs from 'fs';
-import { spawnSync, execSync } from 'child_process';
+import { spawnSync, execSync, spawn } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
-// import { promisify } from 'util';
 
 const { NODE_ENV, SUPERGRAPH_POLL_INTERVAL_MS } = process.env;
 
@@ -57,21 +56,37 @@ const supergraphComposeOnce = async () => {
     // if (fs.existsSync(supergraphPath)) {
     //   return;
     // }
-    const { error } = spawnSync(
-      `rover`,
-      [
-        `supergraph`,
-        `compose`,
-        `--config`,
-        supergraphConfigPath,
-        `--output`,
-        supergraphPath,
-        `--elv2-license=accept`
-      ],
-      { stdio: 'inherit', shell: true }
-    );
+    await new Promise<void>((resolve, reject) => {
+      const rover = spawn(
+        `rover`,
+        [
+          `supergraph`,
+          `compose`,
+          `--config`,
+          supergraphConfigPath,
+          `--output`,
+          supergraphPath,
+          `--elv2-license=accept`
+        ],
+        { stdio: 'inherit', shell: true }
+      );
 
-    console.log(error);
+      rover.on('error', reject);
+      rover.on('exit', code => {
+        if (code === 0) {
+          resolve();
+        } else {
+          reject(new Error(`rover exited with code ${code}`));
+        }
+      });
+      rover.on('close', code => {
+        if (code === 0) {
+          resolve();
+        } else {
+          reject(new Error(`rover exited with code ${code}`));
+        }
+      });
+    });
   } else {
     const superGraphqlNext = supergraphPath + '.next';
     spawnSync(
