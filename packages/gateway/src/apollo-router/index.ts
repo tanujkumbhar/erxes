@@ -77,28 +77,32 @@ const createRouterConfig = () => {
 
 const startRouter = async (
   proxyTargets: ErxesProxyTarget[]
-): Promise<ChildProcess> => {
+): Promise<ChildProcess | undefined> => {
   await supergraphCompose(proxyTargets);
   await createRouterConfig();
-  downloadRouter();
 
-  const devOptions = ['--dev', '--hot-reload'];
+  // production has separate apollo router container/service
+  if (NODE_ENV !== 'production') {
+    downloadRouter();
 
-  const routerProcess = spawn(
-    routerPath,
-    [
-      ...(NODE_ENV === 'development' ? devOptions : []),
-      '--log',
-      NODE_ENV === 'development' ? 'warn' : 'error',
-      `--supergraph`,
-      supergraphPath,
-      `--config`,
-      routerConfigPath
-    ],
-    { stdio: 'inherit' }
-  );
+    const devOptions = ['--dev', '--hot-reload'];
 
-  return routerProcess;
+    const routerProcess = spawn(
+      routerPath,
+      [
+        ...(NODE_ENV === 'development' ? devOptions : []),
+        '--log',
+        NODE_ENV === 'development' ? 'warn' : 'error',
+        `--supergraph`,
+        supergraphPath,
+        `--config`,
+        routerConfigPath
+      ],
+      { stdio: 'inherit' }
+    );
+
+    return routerProcess;
+  }
 };
 
 export default startRouter;

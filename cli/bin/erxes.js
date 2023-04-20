@@ -127,10 +127,4 @@ program
   .description('Download the latest changes of erxes')
   .action(updateCmd);
 
-program
-  .command('router-config')
-  .option('--dev', 'Generate dev config')
-  .description('create router config')
-  .action(routerConfig.generate);
-
 program.parse(process.argv);
