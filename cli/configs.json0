@@ -1,0 +1,43 @@
+{
+  "router_config_dir": "/home/dulguuno/code/erxes-inc/router-config-test",
+  "jwt_token_secret": "token",
+  "client_portal_domains": "http://localhost:4300",
+  "elasticsearch": {},
+  "widgets": {},
+  "redis": {
+    "password": ""
+  },
+  "mongo": {
+    "username": "",
+    "password": ""
+  },
+  "rabbitmq": {
+    "cookie": "",
+    "user": "",
+    "pass": "",
+    "vhost": ""
+  },
+  "ui_remote_url": "https://office.erxes.io/js/plugins/plugin-<name>-ui/remoteEntry.js",
+  "core": {
+    "envs": {
+      "ALLOWED_ORIGINS": ".*",
+      "DEBUG": "test"
+    }
+  },
+  "gateway": {
+    "envs": {
+      "ALLOWED_ORIGINS": ".*",
+      "DEBUG": "test"
+    }
+  },
+  "plugins": [
+    {
+      "name": "contacts",
+      "ui": "local"
+    },
+    {
+      "name": "tags",
+      "ui": "local"
+    }
+  ]
+}
