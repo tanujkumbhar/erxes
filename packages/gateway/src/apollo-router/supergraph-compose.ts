@@ -64,7 +64,7 @@ const supergraphComposeOnce = async () => {
     );
 
     if (stdout) console.log(stdout);
-    if (stderr) throw new Error(stderr);
+    if (stderr) console.error(stderr);
   } else {
     const superGraphqlNext = supergraphPath + '.next';
     execSync(
