@@ -75,10 +75,7 @@ const stopRouter = () => {
 
   const targets: ErxesProxyTarget[] = await retryGetProxyTargets();
 
-  // production environment runs separate apollo router container/service
-  if (NODE_ENV !== 'production') {
-    apolloRouterProcess = await apolloRouter(targets);
-  }
+  apolloRouterProcess = await apolloRouter(targets);
 
   app.use(createErxesProxyMiddleware(targets));
 
