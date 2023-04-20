@@ -4,7 +4,7 @@ dotenv.config();
 import { ErxesProxyTarget } from 'src/proxy/targets';
 import { supergraphConfigPath, supergraphPath } from './paths';
 import * as fs from 'fs';
-import { execSync, spawnSync } from 'child_process';
+import { execSync } from 'child_process';
 import isSameFile from '../util/is-same-file';
 import * as yaml from 'yaml';
 
@@ -57,18 +57,8 @@ const supergraphComposeOnce = async () => {
     //   return;
     // }
 
-    await spawnSync(
-      'rover',
-      [
-        'supergraph',
-        'compose',
-        '--config',
-        supergraphConfigPath,
-        '--output',
-        supergraphPath,
-        '--elv2-license=accept',
-        '--log=debug'
-      ],
+    execSync(
+      `rover supergraph compose --config ${supergraphConfigPath} --output ${supergraphPath} --elv2-license=accept --log=debug`,
       {
         stdio: 'inherit',
         encoding: 'utf-8'
