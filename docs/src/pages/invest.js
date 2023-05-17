@@ -40,9 +40,8 @@ export default function Invest() {
             </h1>
             <Link
               className="button button--primary"
-              to={"https://invest.erxes.io/"}
-              target="_blank"
-            >
+              to={"https://invest.erxes.io/signin/"}
+              target="_blank">
               Invest now
             </Link>
           </div>
@@ -74,9 +73,9 @@ export default function Invest() {
           <section className={styles.dedicationWrapper}>
             <div className="container">
               <h2 className={classnames("center-desktop")}>
-                What is <span className={styles.colorPrimary}>erxes CSO</span>
+                <span className={styles.colorPrimary}>What is erxes CSO</span>
               </h2>
-              <p>
+              <p className={styles.colorPrimary}>
                 erxes Continuous Securities Offering (CSO) is a new way for
                 companies to raise funding. The CSO democratizes investing and
                 modernizes it for the digital era. The CSO offers several
